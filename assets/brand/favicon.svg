@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Kauan">
+  <rect width="512" height="512" fill="#0C0B10"/>
+  <!-- coroa estilizada -->
+  <path fill="#FFFFFF" d="M128 168 L168 236 L216 156 L256 228 L296 156 L344 236 L384 168 L360 268 L152 268 Z"/>
+  <circle cx="128" cy="160" r="14" fill="#FFFFFF"/>
+  <circle cx="256" cy="140" r="16" fill="#FFFFFF"/>
+  <circle cx="384" cy="160" r="14" fill="#FFFFFF"/>
+  <rect x="152" y="268" width="208" height="18" rx="4" fill="#FFFFFF"/>
+  <!-- K -->
+  <path fill="#FFFFFF" d="M168 300 L168 460 L220 460 L220 392 L268 460 L332 460 L258 368 L328 300 L260 300 L220 348 L220 300 Z"/>
+</svg>
