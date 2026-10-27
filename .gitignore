@@ -1,0 +1,9 @@
+_capture/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+ABRIR-PREVIA.html
+*.fast.mp4

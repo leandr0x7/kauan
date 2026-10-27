@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="pt-BR" style="--nav-h: 0px; --faixa-h: 51px; cursor: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADTElEQVR4AcSXS0hUURjH9c6MQ4veQ44PIgkiCloUISnSIqGgbFFkL8SCsAghoQfYonKTLcIMiegFJhGitBAlWlizSMugx67ATS3GccZXq1qMztjvLzMy1bxn7nj5/pzvO3Pv+f/P+b57zlyjpKSku7S0dLqoqOhw3hJcBpy1YI1hGD2IacbPqRn5XGKkkX8TEZ3EBSAnphVYIJrnkoOQelIyWFxc7FBsNhYFQHwPsrdAVkVKRhCxWYGZWBQAyZTb7a5mIZ7iyzYi4j0iqhWYhUgB4vCPjY2dQsRVEKRjFSJeUhfn8E2xfwUskCCilZTUIuI3HTb8+4i4g28BWbWoAsRAOl4Eg8Hd+B6Qh4gmRPQ5HI7lirOFmAJEMD4+/pFVKAdfFCNiv91uH2LTWq84G4grQASkwz03N1eF3we0EtssFsuHwsLCcsWZIqEAEfh8vl+k5BD+bTAPnDabzcUbchQ/I0tKQIghiIjLgUCggdgPlpGS54i4hp+2pSJggYS6eExK9hHMIIC31GhBxDNiO0jZUhYgBq/X66Iwd4FRxag4yRvyhrpYpzgVpCVABBTnKCsgES7F+BXUxYjT6dyqOFmkLUAE1MQMQvbiPwGyMqvVOsxrqhQpToiMBIRGn0XIGTatK6QkQN9KUtJPXTTiJ7SEAsjtWo7nCwJ+A6gDR8ABsAeiCma8HfIB2C6BWdJhRUQHz3QQx92+EwmwMoA2oHbadgZ+ALpAD+gHgxANszF9Al+JdV7YuDdsjYjsDgfR2rgCmIEOpcpoDybbh6i4x3lMASztQZb1oojIr84Eh9/vd7IHlLEZbQE76K/kHv2HqKHV6VlPe5ZnmkAzv9/gvhr8mBZVAK/SBpa2E/X5PPmTQWqp9umJiQkfe8APNqNv4LPH43lH/2swAHpBF3hIUd4Ft/i9hfuGGCOmRRNQQD57eGI1s5lnFqc5C74Tm2L/CSDvbcx8Z4itjVmoCENh9pu/BFCx+kY4Lxpmr+U1/TshUsAmZv4I8nzIp2h11M7SmmqRAo7DtAJy0h6so5jcxKZbpABVvAhbqdxXcnKBSAF5zN7FzK/ngjjMYUCqv1iKvWw0J3B0oNDkxrQCvVDNsMMdm5yc9OJn1RIN9gcAAP//7LPAVQAAAAZJREFUAwCnOl4SmKMrBgAAAABJRU5ErkJggg==&quot;) 0 0, auto !important;" data-cc-prev-cursor="{&quot;prev&quot;:[&quot;&quot;,&quot;&quot;],&quot;ours&quot;:[&quot;url(\&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADTElEQVR4AcSXS0hUURjH9c6MQ4veQ44PIgkiCloUISnSIqGgbFFkL8SCsAghoQfYonKTLcIMiegFJhGitBAlWlizSMugx67ATS3GccZXq1qMztjvLzMy1bxn7nj5/pzvO3Pv+f/P+b57zlyjpKSku7S0dLqoqOhw3hJcBpy1YI1hGD2IacbPqRn5XGKkkX8TEZ3EBSAnphVYIJrnkoOQelIyWFxc7FBsNhYFQHwPsrdAVkVKRhCxWYGZWBQAyZTb7a5mIZ7iyzYi4j0iqhWYhUgB4vCPjY2dQsRVEKRjFSJeUhfn8E2xfwUskCCilZTUIuI3HTb8+4i4g28BWbWoAsRAOl4Eg8Hd+B6Qh4gmRPQ5HI7lirOFmAJEMD4+/pFVKAdfFCNiv91uH2LTWq84G4grQASkwz03N1eF3we0EtssFsuHwsLCcsWZIqEAEfh8vl+k5BD+bTAPnDabzcUbchQ/I0tKQIghiIjLgUCggdgPlpGS54i4hp+2pSJggYS6eExK9hHMIIC31GhBxDNiO0jZUhYgBq/X66Iwd4FRxag4yRvyhrpYpzgVpCVABBTnKCsgES7F+BXUxYjT6dyqOFmkLUAE1MQMQvbiPwGyMqvVOsxrqhQpToiMBIRGn0XIGTatK6QkQN9KUtJPXTTiJ7SEAsjtWo7nCwJ+A6gDR8ABsAeiCma8HfIB2C6BWdJhRUQHz3QQx92+EwmwMoA2oHbadgZ+ALpAD+gHgxANszF9Al+JdV7YuDdsjYjsDgfR2rgCmIEOpcpoDybbh6i4x3lMASztQZb1oojIr84Eh9/vd7IHlLEZbQE76K/kHv2HqKHV6VlPe5ZnmkAzv9/gvhr8mBZVAK/SBpa2E/X5PPmTQWqp9umJiQkfe8APNqNv4LPH43lH/2swAHpBF3hIUd4Ft/i9hfuGGCOmRRNQQD57eGI1s5lnFqc5C74Tm2L/CSDvbcx8Z4itjVmoCENh9pu/BFCx+kY4Lxpmr+U1/TshUsAmZv4I8nzIp2h11M7SmmqRAo7DtAJy0h6so5jcxKZbpABVvAhbqdxXcnKBSAF5zN7FzK/ngjjMYUCqv1iKvWw0J3B0oNDkxrQCvVDNsMMdm5yc9OJn1RIN9gcAAP//7LPAVQAAAAZJREFUAwCnOl4SmKMrBgAAAABJRU5ErkJggg==\&quot;) 0 0, auto&quot;,&quot;important&quot;]}"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kauan | Criativos que vendem</title>
+<meta name="description" content="Kauan — criativos de performance feitos sob medida: roteiro, voz e edição pensados pra anúncio que vende.">
+<meta name="theme-color" content="#1E6FE0">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kauan">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Kauan | Criativos que vendem">
+<meta property="og:description" content="Anúncios pensados pra prender, clicar e vender.">
+<meta property="og:url" content="https://rizefirst.com.br/portfolio/">
+<meta property="og:image" content="https://rizefirst.com.br/img/og.jpg">
+<meta property="og:image:secure_url" content="https://rizefirst.com.br/img/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kauan — criativos que vendem">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kauan | Criativos que vendem">
+<meta name="twitter:description" content="Anúncios pensados pra prender, clicar e vender.">
+<meta name="twitter:image" content="https://rizefirst.com.br/img/og.jpg">
+<meta name="robots" content="index,follow">
+<!-- GestorUp Track (Lucas, 14/10/2026): liga o clique no WhatsApp ao anúncio de origem -->
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/kauan.css">
+</head>
+
+<body style="cursor: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADTElEQVR4AcSXS0hUURjH9c6MQ4veQ44PIgkiCloUISnSIqGgbFFkL8SCsAghoQfYonKTLcIMiegFJhGitBAlWlizSMugx67ATS3GccZXq1qMztjvLzMy1bxn7nj5/pzvO3Pv+f/P+b57zlyjpKSku7S0dLqoqOhw3hJcBpy1YI1hGD2IacbPqRn5XGKkkX8TEZ3EBSAnphVYIJrnkoOQelIyWFxc7FBsNhYFQHwPsrdAVkVKRhCxWYGZWBQAyZTb7a5mIZ7iyzYi4j0iqhWYhUgB4vCPjY2dQsRVEKRjFSJeUhfn8E2xfwUskCCilZTUIuI3HTb8+4i4g28BWbWoAsRAOl4Eg8Hd+B6Qh4gmRPQ5HI7lirOFmAJEMD4+/pFVKAdfFCNiv91uH2LTWq84G4grQASkwz03N1eF3we0EtssFsuHwsLCcsWZIqEAEfh8vl+k5BD+bTAPnDabzcUbchQ/I0tKQIghiIjLgUCggdgPlpGS54i4hp+2pSJggYS6eExK9hHMIIC31GhBxDNiO0jZUhYgBq/X66Iwd4FRxag4yRvyhrpYpzgVpCVABBTnKCsgES7F+BXUxYjT6dyqOFmkLUAE1MQMQvbiPwGyMqvVOsxrqhQpToiMBIRGn0XIGTatK6QkQN9KUtJPXTTiJ7SEAsjtWo7nCwJ+A6gDR8ABsAeiCma8HfIB2C6BWdJhRUQHz3QQx92+EwmwMoA2oHbadgZ+ALpAD+gHgxANszF9Al+JdV7YuDdsjYjsDgfR2rgCmIEOpcpoDybbh6i4x3lMASztQZb1oojIr84Eh9/vd7IHlLEZbQE76K/kHv2HqKHV6VlPe5ZnmkAzv9/gvhr8mBZVAK/SBpa2E/X5PPmTQWqp9umJiQkfe8APNqNv4LPH43lH/2swAHpBF3hIUd4Ft/i9hfuGGCOmRRNQQD57eGI1s5lnFqc5C74Tm2L/CSDvbcx8Z4itjVmoCENh9pu/BFCx+kY4Lxpmr+U1/TshUsAmZv4I8nzIp2h11M7SmmqRAo7DtAJy0h6so5jcxKZbpABVvAhbqdxXcnKBSAF5zN7FzK/ngjjMYUCqv1iKvWw0J3B0oNDkxrQCvVDNsMMdm5yc9OJn1RIN9gcAAP//7LPAVQAAAAZJREFUAwCnOl4SmKMrBgAAAABJRU5ErkJggg==&quot;) 0 0, auto !important;" data-cc-prev-cursor="{&quot;prev&quot;:[&quot;&quot;,&quot;&quot;],&quot;ours&quot;:[&quot;url(\&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADTElEQVR4AcSXS0hUURjH9c6MQ4veQ44PIgkiCloUISnSIqGgbFFkL8SCsAghoQfYonKTLcIMiegFJhGitBAlWlizSMugx67ATS3GccZXq1qMztjvLzMy1bxn7nj5/pzvO3Pv+f/P+b57zlyjpKSku7S0dLqoqOhw3hJcBpy1YI1hGD2IacbPqRn5XGKkkX8TEZ3EBSAnphVYIJrnkoOQelIyWFxc7FBsNhYFQHwPsrdAVkVKRhCxWYGZWBQAyZTb7a5mIZ7iyzYi4j0iqhWYhUgB4vCPjY2dQsRVEKRjFSJeUhfn8E2xfwUskCCilZTUIuI3HTb8+4i4g28BWbWoAsRAOl4Eg8Hd+B6Qh4gmRPQ5HI7lirOFmAJEMD4+/pFVKAdfFCNiv91uH2LTWq84G4grQASkwz03N1eF3we0EtssFsuHwsLCcsWZIqEAEfh8vl+k5BD+bTAPnDabzcUbchQ/I0tKQIghiIjLgUCggdgPlpGS54i4hp+2pSJggYS6eExK9hHMIIC31GhBxDNiO0jZUhYgBq/X66Iwd4FRxag4yRvyhrpYpzgVpCVABBTnKCsgES7F+BXUxYjT6dyqOFmkLUAE1MQMQvbiPwGyMqvVOsxrqhQpToiMBIRGn0XIGTatK6QkQN9KUtJPXTTiJ7SEAsjtWo7nCwJ+A6gDR8ABsAeiCma8HfIB2C6BWdJhRUQHz3QQx92+EwmwMoA2oHbadgZ+ALpAD+gHgxANszF9Al+JdV7YuDdsjYjsDgfR2rgCmIEOpcpoDybbh6i4x3lMASztQZb1oojIr84Eh9/vd7IHlLEZbQE76K/kHv2HqKHV6VlPe5ZnmkAzv9/gvhr8mBZVAK/SBpa2E/X5PPmTQWqp9umJiQkfe8APNqNv4LPH43lH/2swAHpBF3hIUd4Ft/i9hfuGGCOmRRNQQD57eGI1s5lnFqc5C74Tm2L/CSDvbcx8Z4itjVmoCENh9pu/BFCx+kY4Lxpmr+U1/TshUsAmZv4I8nzIp2h11M7SmmqRAo7DtAJy0h6so5jcxKZbpABVvAhbqdxXcnKBSAF5zN7FzK/ngjjMYUCqv1iKvWw0J3B0oNDkxrQCvVDNsMMdm5yc9OJn1RIN9gcAAP//7LPAVQAAAAZJREFUAwCnOl4SmKMrBgAAAABJRU5ErkJggg==\&quot;) 0 0, auto&quot;,&quot;important&quot;]}">
+
+
+
+<section id="inicio" class="tb tb-escuro" style="padding-top: 40px;">
+  <p class="kz-hero-giant" translate="no" aria-hidden="true">KAUAN</p>
+  <div class="tb-luz" aria-hidden="true"></div>
+  <div class="tb-fila-cel" aria-label="Criativos em destaque"><div class="tb-trilho"><button type="button" class="tc " data-p="ugc" data-n="3" data-nome="UGC" aria-label="Assistir criativo UGC">
+          <img src="assets/001-ugc-3.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/010-ugc-3.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">UGC</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="motion" data-n="1" data-nome="Motion Design" aria-label="Assistir criativo Motion Design">
+          <img src="assets/002-motion-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/016-motion-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Motion Design</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="hardcopy" data-n="1" data-nome="Hard Copy" aria-label="Assistir criativo Hard Copy">
+          <img src="assets/003-hardcopy-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/011-hardcopy-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Hard Copy</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="surge" data-n="1" data-nome="Impact" aria-label="Assistir criativo Impact">
+          <img src="assets/004-surge-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/017-surge-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Impact</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="hardmotion" data-n="1" data-nome="Hard Motion" aria-label="Assistir criativo Hard Motion">
+          <img src="assets/005-hardmotion-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Hard Motion</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="ia" data-n="2" data-nome="IA" aria-label="Assistir criativo IA">
+          <img src="assets/006-ia-2.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/012-ia-2.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">IA</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="viral" data-n="1" data-nome="Viral" aria-label="Assistir criativo Viral">
+          <img src="assets/007-viral-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/014-viral-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Viral</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="ugc" data-n="1" data-nome="UGC" aria-label="Assistir criativo UGC">
+          <img src="assets/008-ugc-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/013-ugc-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">UGC</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="hardcopy" data-n="3" data-nome="Hard Copy" aria-label="Assistir criativo Hard Copy">
+          <img src="assets/009-hardcopy-3.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/015-hardcopy-3.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Hard Copy</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="ugc" data-n="3" data-nome="UGC" aria-label="Assistir criativo UGC">
+          <img src="assets/001-ugc-3.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/010-ugc-3.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">UGC</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="motion" data-n="1" data-nome="Motion Design" aria-label="Assistir criativo Motion Design">
+          <img src="assets/002-motion-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/016-motion-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Motion Design</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="hardcopy" data-n="1" data-nome="Hard Copy" aria-label="Assistir criativo Hard Copy">
+          <img src="assets/003-hardcopy-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/011-hardcopy-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Hard Copy</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="surge" data-n="1" data-nome="Impact" aria-label="Assistir criativo Impact">
+          <img src="assets/004-surge-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/017-surge-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Impact</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="hardmotion" data-n="1" data-nome="Hard Motion" aria-label="Assistir criativo Hard Motion">
+          <img src="assets/005-hardmotion-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Hard Motion</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="ia" data-n="2" data-nome="IA" aria-label="Assistir criativo IA">
+          <img src="assets/006-ia-2.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/012-ia-2.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">IA</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="viral" data-n="1" data-nome="Viral" aria-label="Assistir criativo Viral">
+          <img src="assets/007-viral-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/014-viral-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Viral</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="ugc" data-n="1" data-nome="UGC" aria-label="Assistir criativo UGC">
+          <img src="assets/008-ugc-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/013-ugc-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">UGC</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="hardcopy" data-n="3" data-nome="Hard Copy" aria-label="Assistir criativo Hard Copy">
+          <img src="assets/009-hardcopy-3.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/015-hardcopy-3.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Hard Copy</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button></div></div>
+  <div class="wrap tb-grade">
+    <div class="tb-txt">
+      <h1>Faça suas campanhas decolarem com<span class="tb-dest">criativos que convertem.</span></h1>
+      <p class="tb-sub"><b>Chega de peça genérica.</b> Roteiro, voz e edição sob medida com um foco só: <b>transformar atenção em venda</b>.</p>
+      <div class="tb-ctas"><a href="#projetos" class="tb-btn">Ver estilos <span>→</span></a><a href="https://wa.me/5581979043528?text=Oi!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20criativos%20pra%20campanha." data-cta="" class="tb-btn tb-zap" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.89-7.02zm-7.01 15.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 0 1 12.79-10.2 8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.22 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"></path></svg>Chamar no WhatsApp</a></div>
+    </div>
+    <div class="tb-mosaico" aria-label="Criativos em destaque" style="margin-top: 128px; --mh: 364px;">
+      <div class="tb-col"><div class="tb-anda tb-sobe"><button type="button" class="tc tc-alto" data-p="ugc" data-n="3" data-nome="UGC" aria-label="Assistir criativo UGC">
+          <img src="assets/001-ugc-3.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/010-ugc-3.mp4?r=7" onplaying="this.classList.add('pronto')" src="assets/010-ugc-3.mp4?r=7" class="pronto"></video>
+          <span class="tc-chip">UGC</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="hardcopy" data-n="1" data-nome="Hard Copy" aria-label="Assistir criativo Hard Copy">
+          <img src="assets/003-hardcopy-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/011-hardcopy-1.mp4?r=7" onplaying="this.classList.add('pronto')" src="assets/011-hardcopy-1.mp4?r=7" class="pronto"></video>
+          <span class="tc-chip">Hard Copy</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc tc-alto" data-p="ia" data-n="2" data-nome="IA" aria-label="Assistir criativo IA">
+          <img src="assets/006-ia-2.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/012-ia-2.mp4?r=7" onplaying="this.classList.add('pronto')" src="assets/012-ia-2.mp4?r=7" class="pronto"></video>
+          <span class="tc-chip">IA</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="ugc" data-n="1" data-nome="UGC" aria-label="Assistir criativo UGC">
+          <img src="assets/008-ugc-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/013-ugc-1.mp4?r=7" onplaying="this.classList.add('pronto')" src="assets/013-ugc-1.mp4?r=7" class="pronto"></video>
+          <span class="tc-chip">UGC</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc tc-alto" data-p="ugc" data-n="3" data-nome="UGC" aria-label="Assistir criativo UGC">
+          <img src="assets/001-ugc-3.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/010-ugc-3.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">UGC</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="hardcopy" data-n="1" data-nome="Hard Copy" aria-label="Assistir criativo Hard Copy">
+          <img src="assets/003-hardcopy-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/011-hardcopy-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Hard Copy</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc tc-alto" data-p="ia" data-n="2" data-nome="IA" aria-label="Assistir criativo IA">
+          <img src="assets/006-ia-2.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/012-ia-2.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">IA</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="ugc" data-n="1" data-nome="UGC" aria-label="Assistir criativo UGC">
+          <img src="assets/008-ugc-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/013-ugc-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">UGC</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button></div></div>
+      <div class="tb-col tb-col-2"><div class="tb-anda tb-desce"><button type="button" class="tc " data-p="motion" data-n="1" data-nome="Motion Design" aria-label="Assistir criativo Motion Design">
+          <img src="assets/002-motion-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/016-motion-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Motion Design</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc tc-alto" data-p="surge" data-n="1" data-nome="Impact" aria-label="Assistir criativo Impact">
+          <img src="assets/004-surge-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/017-surge-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Impact</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc tc-alto" data-p="hardmotion" data-n="1" data-nome="Hard Motion" aria-label="Assistir criativo Hard Motion">
+          <img src="assets/005-hardmotion-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Hard Motion</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="viral" data-n="1" data-nome="Viral" aria-label="Assistir criativo Viral">
+          <img src="assets/007-viral-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/014-viral-1.mp4?r=7" onplaying="this.classList.add('pronto')" src="assets/014-viral-1.mp4?r=7" class="pronto"></video>
+          <span class="tc-chip">Viral</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc tc-alto" data-p="hardcopy" data-n="3" data-nome="Hard Copy" aria-label="Assistir criativo Hard Copy">
+          <img src="assets/009-hardcopy-3.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/015-hardcopy-3.mp4?r=7" onplaying="this.classList.add('pronto')" src="assets/015-hardcopy-3.mp4?r=7" class="pronto"></video>
+          <span class="tc-chip">Hard Copy</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="motion" data-n="1" data-nome="Motion Design" aria-label="Assistir criativo Motion Design">
+          <img src="assets/002-motion-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/016-motion-1.mp4?r=7" onplaying="this.classList.add('pronto')" src="assets/016-motion-1.mp4?r=7" class="pronto"></video>
+          <span class="tc-chip">Motion Design</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc tc-alto" data-p="surge" data-n="1" data-nome="Impact" aria-label="Assistir criativo Impact">
+          <img src="assets/004-surge-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/017-surge-1.mp4?r=7" onplaying="this.classList.add('pronto')" src="assets/017-surge-1.mp4?r=7"></video>
+          <span class="tc-chip">Impact</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc tc-alto" data-p="hardmotion" data-n="1" data-nome="Hard Motion" aria-label="Assistir criativo Hard Motion">
+          <img src="assets/005-hardmotion-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Hard Motion</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc " data-p="viral" data-n="1" data-nome="Viral" aria-label="Assistir criativo Viral">
+          <img src="assets/007-viral-1.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/014-viral-1.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Viral</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button><button type="button" class="tc tc-alto" data-p="hardcopy" data-n="3" data-nome="Hard Copy" aria-label="Assistir criativo Hard Copy">
+          <img src="assets/009-hardcopy-3.jpg?r=7" alt="" decoding="async" draggable="false">
+          <video muted="" loop="" playsinline="" preload="none" data-src="assets/015-hardcopy-3.mp4?r=7" onplaying="this.classList.add('pronto')"></video>
+          <span class="tc-chip">Hard Copy</span>
+          <span class="tc-rod"><b>Pronto em 48h</b><em>✓ VALIDADO</em></span>
+        </button></div></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="v-stats rv in">
+      <div><b data-conta="2" data-pre="+"><i class="vt-pre">+</i>0</b><span>Anos de experiência</span></div>
+      <div><b data-conta="5" data-pre="+R$ " data-suf="M"><i class="vt-pre">+R$ </i>0M</b><span>Gerados para clientes</span></div>
+      <div><b data-conta="1200" data-pre="+"><i class="vt-pre">+</i>0</b><span>Clientes atendidos</span></div>
+      <div><b data-conta="3000" data-pre="+"><i class="vt-pre">+</i>0</b><span>Criativos produzidos</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="marcas" class="kz-oferta-sec" aria-label="Oferta relâmpago">
+  <p class="marcas-titulo rv in"><span class="kz-pulse" aria-hidden="true"></span> Oferta relâmpago</p>
+  <div class="marcas-trilho kz-oferta-trilho">
+    <div class="marcas-fila kz-oferta-fila" id="marcas-fila" style="--dur: 28s;"></div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="sec-head rv in">
+      <h2 class="sec-title">Estilos<span class="kz-accent" aria-hidden="true"><i class="kz-a-tri"></i><i class="kz-a-dot"></i><i class="kz-a-sq"></i></span></h2>
+      <p class="sec-sub">Sete formatos, um pra cada fase da campanha. Toque no vídeo pra ouvir com som.</p>
+
+    </div>
+    <div class="projetos-lista" id="lista-formatos">
+  <article class="formato rv in" style="--tema:#1E6FE0;--tema-2:#1559C2">
+    <div class="formato-head">
+      <span class="formato-fita">Sem aparecer</span>
+      <span class="formato-fig" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10v4h3l6 4V6L6 10z"></path><path d="M16 9a4 4 0 0 1 0 6"></path><path d="M19 6a8 8 0 0 1 0 12"></path></svg></span>
+      <div class="formato-titulo">
+        <h3 translate="no">Hard Copy</h3>
+        <span class="formato-preco">R$90 por vídeo</span>
+      </div>
+      <p>Pra quem já tem o produto e precisa vender agora. Voz e texto na tela levam a pessoa do problema até a compra, sem ninguém precisar aparecer.</p>
+    </div>
+    <div class="formato-corpo">
+    <div class="formato-videos">
+      
+        <div class="vitrine" data-nome="Hard Copy" data-src="assets/011-hardcopy-1.mp4" role="button" tabindex="0" aria-label="Assistir exemplo de Hard Copy">
+          <img src="assets/003-hardcopy-1.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Hard Copy</span>
+        </div>
+        <div class="vitrine" data-nome="Hard Copy" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de Hard Copy">
+          <img src="assets/053-hardcopy-2.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Hard Copy</span>
+        </div>
+        <div class="vitrine" data-nome="Hard Copy" data-src="assets/015-hardcopy-3.mp4" role="button" tabindex="0" aria-label="Assistir exemplo de Hard Copy">
+          <img src="assets/009-hardcopy-3.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Hard Copy</span>
+        </div>
+    </div>
+    <div class="formato-acoes">
+      <a href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20pelo%20Hard%20Copy." target="_blank" rel="noopener" class="formato-mais"><span>Começar pelo <b>Hard Copy</b></span><i class="fm-seta" aria-hidden="true">›</i></a>
+    </div>
+    
+    </div>
+  </article>
+  <article class="formato rv in" style="--tema:#7C3AED;--tema-2:#5B21B6">
+    <div class="formato-head">
+      <span class="formato-fita">Sem gravar nada</span>
+      <span class="formato-fig" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 3l1.6 4.4L16 9l-4.4 1.6L10 15l-1.6-4.4L4 9l4.4-1.6z"></path><path d="M18 13l.9 2.1L21 16l-2.1.9L18 19l-.9-2.1L15 16l2.1-.9z"></path></svg></span>
+      <div class="formato-titulo">
+        <h3 translate="no">IA</h3>
+        <span class="formato-preco">R$90 por vídeo</span>
+      </div>
+      <p>Pra quem não tem material nenhum e não quer gravar. A cena inteira nasce por inteligência artificial, lugar, objeto, pessoa, sem câmera, estúdio ou agenda.</p>
+    </div>
+    <div class="formato-corpo">
+    <div class="formato-videos">
+      
+        <div class="vitrine" data-nome="IA" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de IA">
+          <img src="assets/054-ia-1.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">IA</span>
+        </div>
+        <div class="vitrine" data-nome="IA" data-src="assets/012-ia-2.mp4" role="button" tabindex="0" aria-label="Assistir exemplo de IA">
+          <img src="assets/006-ia-2.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">IA</span>
+        </div>
+        <div class="vitrine" data-nome="IA" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de IA">
+          <img src="assets/055-ia-3.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">IA</span>
+        </div>
+    </div>
+    <div class="formato-acoes">
+      <a href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20pelo%20IA." target="_blank" rel="noopener" class="formato-mais"><span>Começar pelo <b>IA</b></span><i class="fm-seta" aria-hidden="true">›</i></a>
+    </div>
+    
+    </div>
+  </article>
+  <article class="formato rv in" style="--tema:#F97316;--tema-2:#F59E0B">
+    <div class="formato-head">
+      <span class="formato-fita">Ritmo de feed</span>
+      <span class="formato-fig" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"></path></svg></span>
+      <div class="formato-titulo">
+        <h3 translate="no">Viral</h3>
+        <span class="formato-preco">R$90 por vídeo</span>
+      </div>
+      <p>Pra quem já tem material solto e precisa de ritmo. Corte rápido, texto grande e música no tempo certo, no formato que o feed já entende.</p>
+    </div>
+    <div class="formato-corpo">
+    <div class="formato-videos">
+      
+        <div class="vitrine" data-nome="Viral" data-src="assets/014-viral-1.mp4" role="button" tabindex="0" aria-label="Assistir exemplo de Viral">
+          <img src="assets/007-viral-1.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Viral</span>
+        </div>
+        <div class="vitrine" data-nome="Viral" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de Viral">
+          <img src="assets/056-viral-2.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Viral</span>
+        </div>
+        <div class="vitrine" data-nome="Viral" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de Viral">
+          <img src="assets/057-viral-3.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Viral</span>
+        </div>
+    </div>
+    <div class="formato-acoes">
+      <a href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20pelo%20Viral." target="_blank" rel="noopener" class="formato-mais"><span>Começar pelo <b>Viral</b></span><i class="fm-seta" aria-hidden="true">›</i></a>
+    </div>
+    
+    </div>
+  </article>
+  <article class="formato rv in" style="--tema:#EF4444;--tema-2:#B91C1C">
+    <div class="formato-head">
+      <span class="formato-fita">Texto em movimento</span>
+      <span class="formato-fig" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h9"></path><path d="M4 12h6"></path><path d="M4 17h8"></path><path d="M14 9l5 3-5 3z"></path></svg></span>
+      <div class="formato-titulo">
+        <h3 translate="no">Hard Motion</h3>
+        <span class="formato-preco">R$90 por vídeo</span>
+      </div>
+      <p>Hard Copy com movimento. Texto animado, zoom e transições no ritmo da fala, pra segurar a atenção até o fim sem ninguém aparecer.</p>
+    </div>
+    <div class="formato-corpo">
+    <div class="formato-videos">
+      
+        <div class="vitrine" data-nome="Hard Motion" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de Hard Motion">
+          <img src="assets/005-hardmotion-1.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Hard Motion</span>
+        </div>
+        <div class="vitrine" data-nome="Hard Motion" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de Hard Motion">
+          <img src="assets/058-hardmotion-2.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Hard Motion</span>
+        </div>
+        <div class="vitrine" data-nome="Hard Motion" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de Hard Motion">
+          <img src="assets/059-hardmotion-3.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Hard Motion</span>
+        </div>
+    </div>
+    <div class="formato-acoes">
+      <a href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20pelo%20Hard%20Motion." target="_blank" rel="noopener" class="formato-mais"><span>Começar pelo <b>Hard Motion</b></span><i class="fm-seta" aria-hidden="true">›</i></a>
+    </div>
+    
+    </div>
+  </article>
+  <article class="formato rv in" style="--tema:#DB2777;--tema-2:#9D174D">
+    <div class="formato-head">
+      <span class="formato-fita">Cara de campanha</span>
+      <span class="formato-fig" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 8-9"></path><path d="M14 7h6v6"></path></svg></span>
+      <div class="formato-titulo">
+        <h3 translate="no">Impact</h3>
+        <span class="formato-preco">R$150 por vídeo</span>
+      </div>
+      <p>Produção reforçada, com camadas visuais, motion e acabamento de campanha. Pra quem quer um viral com cara de anúncio grande.</p>
+    </div>
+    <div class="formato-corpo">
+    <div class="formato-videos">
+      
+        <div class="vitrine" data-nome="Impact" data-src="assets/017-surge-1.mp4" role="button" tabindex="0" aria-label="Assistir exemplo de Impact">
+          <img src="assets/004-surge-1.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Impact</span>
+        </div>
+        <div class="vitrine" data-nome="Impact" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de Impact">
+          <img src="assets/060-surge-2.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Impact</span>
+        </div>
+        <div class="vitrine" data-nome="Impact" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de Impact">
+          <img src="assets/061-surge-3.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Impact</span>
+        </div>
+    </div>
+    <div class="formato-acoes">
+      <a href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20pelo%20Impact." target="_blank" rel="noopener" class="formato-mais"><span>Começar pelo <b>Impact</b></span><i class="fm-seta" aria-hidden="true">›</i></a>
+    </div>
+    
+    </div>
+  </article>
+  <article class="formato rv in" style="--tema:#10B981;--tema-2:#047857">
+    <div class="formato-head">
+      <span class="formato-fita">Pessoa real</span>
+      <span class="formato-fig" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"></rect><circle cx="12" cy="9" r="2.4"></circle><path d="M8.6 15.5a3.6 3.6 0 0 1 6.8 0"></path></svg></span>
+      <div class="formato-titulo">
+        <h3 translate="no">UGC</h3>
+        <span class="formato-preco">R$250 por vídeo</span>
+      </div>
+      <p>Pessoa real gravando com o seu produto, como indicação de amigo. Gera confiança e converte quem ainda não te conhece.</p>
+    </div>
+    <div class="formato-corpo">
+    <div class="formato-videos">
+      
+        <div class="vitrine" data-nome="UGC" data-src="assets/013-ugc-1.mp4" role="button" tabindex="0" aria-label="Assistir exemplo de UGC">
+          <img src="assets/008-ugc-1.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">UGC</span>
+        </div>
+        <div class="vitrine" data-nome="UGC" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de UGC">
+          <img src="assets/062-ugc-2.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">UGC</span>
+        </div>
+        <div class="vitrine" data-nome="UGC" data-src="assets/010-ugc-3.mp4" role="button" tabindex="0" aria-label="Assistir exemplo de UGC">
+          <img src="assets/001-ugc-3.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">UGC</span>
+        </div>
+    </div>
+    <div class="formato-acoes">
+      <a href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20pelo%20UGC." target="_blank" rel="noopener" class="formato-mais"><span>Começar pelo <b>UGC</b></span><i class="fm-seta" aria-hidden="true">›</i></a>
+    </div>
+    
+    </div>
+  </article>
+  <article class="formato rv in" style="--tema:#0A1F44;--tema-2:#1E6FE0">
+    <div class="formato-head">
+      <span class="formato-fita">Acabamento de estúdio</span>
+      <span class="formato-fig" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="3.5"></circle><rect x="13" y="13" width="7" height="7" rx="1.5"></rect><path d="M14 4l5 0-2.5 4.5z"></path><path d="M6 14v6M3 17h6"></path></svg></span>
+      <div class="formato-titulo">
+        <h3 translate="no">Motion Design</h3>
+        <span class="formato-preco">R$400 por vídeo</span>
+      </div>
+      <p>Animação feita do zero, com acabamento de estúdio. Ideal pra lançamento, apresentação de produto ou campanha que precisa se destacar no feed.</p>
+    </div>
+    <div class="formato-corpo">
+    <div class="formato-videos">
+      
+        <div class="vitrine" data-nome="Motion Design" data-src="assets/016-motion-1.mp4" role="button" tabindex="0" aria-label="Assistir exemplo de Motion Design">
+          <img src="assets/002-motion-1.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Motion Design</span>
+        </div>
+        <div class="vitrine" data-nome="Motion Design" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de Motion Design">
+          <img src="assets/063-motion-2.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Motion Design</span>
+        </div>
+        <div class="vitrine" data-nome="Motion Design" data-src="" role="button" tabindex="0" aria-label="Assistir exemplo de Motion Design">
+          <img src="assets/064-motion-3.jpg?r=7" alt="" loading="lazy" decoding="async" draggable="false">
+          
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span>
+          <button class="vitrine-som" type="button" aria-label="Assistir este criativo">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+          </button>
+          <span class="vitrine-tag">Motion Design</span>
+        </div>
+    </div>
+    <div class="formato-acoes">
+      <a href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20come%C3%A7ar%20pelo%20Motion%20Design." target="_blank" rel="noopener" class="formato-mais"><span>Começar pelo <b>Motion Design</b></span><i class="fm-seta" aria-hidden="true">›</i></a>
+    </div>
+    
+    </div>
+  </article></div>
+  </div>
+</section>
+
+<section id="cases" class="tema-escuro kz-depos">
+  <div class="wrap">
+    <div class="sec-head rv in">
+      <p class="eyebrow">Depoimentos</p>
+      <h2 class="cases-titulo">Quem já rodou criativo comigo.</h2>
+      <p class="sec-sub" style="color:rgba(255,255,255,.65);margin-top:12px">Histórias fictícias de referência — o formato que seus resultados podem seguir.</p>
+    </div>
+    <div class="kz-depo-trilho" aria-label="Depoimentos em carrossel">
+      <div class="kz-depo-fila" id="cases-grade"></div>
+    </div>
+    <div class="cases-rodape rv in">
+      <a href="https://wa.me/5581979043528?text=Oi!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20criativos%20pra%20campanha." data-cta="" class="btn-insta so-com-cta btn-zap-dep" target="_blank" rel="noopener">Quero resultados assim</a>
+    </div>
+  </div>
+</section>
+
+<section id="pacotes">
+  <div class="flut kz-geo-flut" aria-hidden="true">
+      <svg class="f1" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle></svg>
+      <svg class="f2" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1.5"></rect></svg>
+      <svg class="f3" viewBox="0 0 24 24"><path d="M12 4 21 20H3z"></path></svg>
+      <svg class="f4" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+    </div>
+  <div class="wrap">
+    <div class="sec-head centro rv in">
+      <h2 class="sec-title">Escolha o seu <span class="rabisco">pacote<svg class="rab" viewBox="0 0 200 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 12 C 40 4, 80 4, 118 9 S 178 15, 197 6"></path></svg></span>.</h2>
+      <p class="sec-sub">Todo pacote inclui roteiro, narração e edição. Quanto maior, mais você leva: ajustes extras, versões e um projeto alinhado ao seu negócio.</p>
+    </div>
+    <div class="pk-seg" id="pk-seg" role="tablist" aria-label="Escolha a quantidade">
+      <span class="pk-seg-pill" aria-hidden="true" style="width: 103px; transform: translateX(103px);"></span>
+      <button type="button" role="tab" data-i="0" aria-selected="false"><b>3</b> vídeos</button>
+      <button type="button" role="tab" data-i="1" class="on" aria-selected="true"><b>5</b> vídeos</button>
+      <button type="button" role="tab" data-i="2" aria-selected="false"><b>10</b> vídeos</button>
+    </div>
+    <div class="pk-grade" id="pk-grade">
+    <article class="pk rv d1 in">
+      <div class="pk-cabeca">
+        <h3>Pacote 3</h3>
+        <span class="pk-tag">Pra começar</span>
+      </div>
+      <p class="pk-de">De <s>R$270</s> <span>(3 x R$90)</span></p>
+      <div class="pk-preco"><span>por</span><b>R$255</b></div>
+      <p class="pk-frase">Pra descobrir qual ângulo vende.</p>
+      <ul class="pk-itens">
+        <li class="pk-qtd">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.6"></rect><rect x="14" y="3" width="7" height="7" rx="1.6"></rect><rect x="3" y="14" width="7" height="7" rx="1.6"></rect><rect x="14" y="14" width="7" height="7" rx="1.6"></rect></svg>
+      <span class="pk-tx">3 criativos prontos pra anunciar</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li>
+        
+        <li class="">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+      <span class="pk-tx">Roteiro, narração e edição</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li><li class="">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5.5l3.5 2"></path></svg>
+      <span class="pk-tx">Entrega em até 48h</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li>
+        <li class="">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6"></path><path d="M20 3v5h-5"></path></svg>
+      <span class="pk-tx">1 rodada de ajuste</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li>
+      </ul>
+      <a class="pk-btn" target="_blank" rel="noopener" href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20fechar%20o%20Pacote%203%20(3%20criativos%20por%20R%24255).">Quero o Pacote 3</a>
+    </article>
+    <article class="pk rv d2 pk-top in">
+      <div class="pk-cabeca">
+        <h3>Pacote 5</h3>
+        <span class="pk-tag"><svg class="pk-coroa" viewBox="0 0 64 44" aria-hidden="true"><path d="M4 40 L8 12 L22 26 L32 4 L42 26 L56 12 L60 40 Z"></path></svg>Mais pedido</span>
+      </div>
+      <p class="pk-de">De <s>R$450</s> <span>(5 x R$90)</span></p>
+      <div class="pk-preco"><span>por</span><b>R$380</b></div>
+      <p class="pk-frase">O tanto que dá pra testar de verdade.</p>
+      <ul class="pk-itens">
+        <li class="pk-qtd">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.6"></rect><rect x="14" y="3" width="7" height="7" rx="1.6"></rect><rect x="3" y="14" width="7" height="7" rx="1.6"></rect><rect x="14" y="14" width="7" height="7" rx="1.6"></rect></svg>
+      <span class="pk-tx">5 criativos pra testar ângulos diferentes</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li>
+        <li class="pk-mais">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect><path d="M6.5 11h5M14 11h3.5M6.5 15h3M12 15h5.5"></path></svg>
+      <span class="pk-tx">Legenda embutida + versão limpa</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li><li class="pk-mais">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6"></path><path d="M20 3v5h-5"></path></svg>
+      <span class="pk-tx">2 rodadas de ajuste</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li>
+        <li class="">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+      <span class="pk-tx">Roteiro, narração e edição</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li><li class="">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5.5l3.5 2"></path></svg>
+      <span class="pk-tx">Entrega em até 48h</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li>
+        
+      </ul>
+      <a class="pk-btn" target="_blank" rel="noopener" href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20fechar%20o%20Pacote%205%20(5%20criativos%20por%20R%24380).">Quero o Pacote 5</a>
+    </article>
+    <article class="pk rv d3 in">
+      <div class="pk-cabeca">
+        <h3>Pacote 10</h3>
+        <span class="pk-tag">Melhor preço</span>
+      </div>
+      <p class="pk-de">De <s>R$900</s> <span>(10 x R$90)</span></p>
+      <div class="pk-preco"><span>por</span><b>R$750</b></div>
+      <p class="pk-frase">Pra quem está começando a escalar.</p>
+      <ul class="pk-itens">
+        <li class="pk-qtd">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.6"></rect><rect x="14" y="3" width="7" height="7" rx="1.6"></rect><rect x="3" y="14" width="7" height="7" rx="1.6"></rect><rect x="14" y="14" width="7" height="7" rx="1.6"></rect></svg>
+      <span class="pk-tx">10 criativos pra começar a escalar</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li>
+        <li class="pk-mais">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"></path><circle cx="15" cy="6" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
+      <span class="pk-tx">Projeto personalizado: estilo e modelo ideais pro seu negócio</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li><li class="pk-mais">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"></path><path d="M17 15l3 3-3 3"></path></svg>
+      <span class="pk-tx">Fila prioritária na produção</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li><li class="pk-mais">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6"></path><path d="M20 3v5h-5"></path></svg>
+      <span class="pk-tx">3 rodadas de ajuste</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li>
+        <li class="">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect><path d="M6.5 11h5M14 11h3.5M6.5 15h3M12 15h5.5"></path></svg>
+      <span class="pk-tx">Legenda embutida + versão limpa</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li><li class="">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+      <span class="pk-tx">Roteiro, narração e edição</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li><li class="">
+      <svg class="pk-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5.5l3.5 2"></path></svg>
+      <span class="pk-tx">Entrega em até 48h</span>
+      <i class="pk-ck" aria-hidden="true"></i>
+    </li>
+        
+      </ul>
+      <a class="pk-btn" target="_blank" rel="noopener" href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20fechar%20o%20Pacote%2010%20(10%20criativos%20por%20R%24750).">Quero o Pacote 10</a>
+    </article></div>
+    <p class="pk-dica">Arraste para ver os outros pacotes →</p>
+    <article class="perso rv in">
+      <div class="perso-fig" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"></path><circle cx="15" cy="6" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
+      </div>
+      <div class="perso-txt">
+        <span class="perso-rot">Sob medida</span>
+        <h3>Personalizado</h3>
+        <p>Em dúvida sobre o estilo? Eu analiso o seu negócio e monto o projeto: formato certo, modelo certo e roteiro pensado pro seu público. Pode misturar estilos no mesmo pacote.</p>
+        <ul class="perso-lista">
+          <li>Análise do seu nicho</li>
+          <li>Estilo e modelo indicados pra você</li>
+          <li>Estilos misturados no mesmo projeto</li>
+        </ul>
+      </div>
+      <a class="perso-btn so-com-cta" data-perso="" target="_blank" rel="noopener" href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20um%20projeto%20personalizado.%20Pode%20me%20ajudar%20a%20escolher%20o%20estilo%20e%20o%20modelo%20ideal%3F">Montar meu projeto →</a>
+    </article>
+    <div class="pk-extras" id="pk-extras">
+    <article class="pk-extra rv d1 in">
+      <div class="pk-extra-topo"><h3>Impact</h3><b>R$150</b></div>
+      <p>Camadas, motion e acabamento de campanha.</p>
+      <a target="_blank" rel="noopener" href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20um%20criativo%20Impact%20(R%24150).">Quero esse →</a>
+    </article>
+    <article class="pk-extra rv d2 in">
+      <div class="pk-extra-topo"><h3>UGC</h3><b>R$250</b></div>
+      <p>Pessoa real gravando com o seu produto.</p>
+      <a target="_blank" rel="noopener" href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20um%20criativo%20UGC%20(R%24250).">Quero esse →</a>
+    </article>
+    <article class="pk-extra rv d3 in">
+      <div class="pk-extra-topo"><h3>Motion Design</h3><b>R$400</b></div>
+      <p>Animação feita do zero, acabamento de estúdio.</p>
+      <a target="_blank" rel="noopener" href="https://wa.me/5581979043528?text=Ol%C3%A1!%20Quero%20um%20criativo%20Motion%20Design%20(R%24400).">Quero esse →</a>
+    </article></div>
+    <p class="pk-nota rv in"><b>Quatro estilos, um preço só:</b> Hard Copy, IA, Viral e Hard Motion valem nos pacotes, e pode misturar.</p>
+  </div>
+</section>
+<section id="processo">
+  <div class="flut kz-geo-flut" aria-hidden="true">
+      <svg class="f5" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="1.5"></rect></svg>
+      <svg class="f2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle></svg>
+      <svg class="f3" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+      <svg class="f6" viewBox="0 0 24 24"><path d="M12 4 21 20H3z"></path></svg>
+    </div>
+  <div class="wrap">
+    <div class="sec-head rv in">
+      <h2 class="sec-title">Como funciona.</h2>
+    </div>
+    <ol class="timeline" id="timeline" style="position: relative;">
+  <li class="tl rv tl-aceso in tl-agora">
+    <span class="tl-n"><i class="tl-fig"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4"></path><path d="M14 3v4h4"></path><path d="M18 7v4"></path><path d="M8.5 9h5M8.5 13h4"></path><path d="m14 18 2 2 4-4.5"></path></svg></i><em>01</em></span>
+    <h3>Onboarding</h3>
+    <p>Depois do pagamento, eu abro o grupo e alinho o tom da comunicação.</p>
+  </li>
+  <li class="tl rv in">
+    <span class="tl-n"><i class="tl-fig"><svg viewBox="0 0 24 24"><path d="M13 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l4 4v4"></path><path d="M8.5 9h6M8.5 13h4"></path><circle cx="16.5" cy="16.5" r="3"></circle><path d="m18.7 18.7 2.3 2.3"></path></svg></i><em>02</em></span>
+    <h3>Briefing</h3>
+    <p>Você responde o formulário com as informações do projeto.</p>
+  </li>
+  <li class="tl rv in">
+    <span class="tl-n"><i class="tl-fig"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path d="M8.5 12h7M8.5 15.5h7M8.5 8.5h3"></path></svg></i><em>03</em></span>
+    <h3>Copy</h3>
+    <p>Escrevo a copy e envio pra sua aprovação.</p>
+  </li>
+  <li class="tl rv in">
+    <span class="tl-n"><i class="tl-fig"><svg viewBox="0 0 24 24"><rect x="2.5" y="10" width="13" height="9" rx="1.5"></rect><path d="m15.5 13 6-3v9l-6-3"></path><circle cx="6" cy="6.5" r="2.5"></circle><circle cx="12" cy="6.5" r="2.5"></circle></svg></i><em>04</em></span>
+    <h3>Produção</h3>
+    <p>Com o ok, eu começo a produção do criativo.</p>
+  </li>
+  <li class="tl rv in">
+    <span class="tl-n"><i class="tl-fig"><svg viewBox="0 0 24 24"><path d="m4.5 12.5 5 5 10-11"></path></svg></i><em>05</em></span>
+    <h3>Entrega</h3>
+    <p>Em até 48h, você recebe o material pronto no grupo.</p>
+  </li><span class="tl-fantasma" aria-hidden="true" style="transform: translate(20px, 43px); opacity: 0;"></span><span class="tl-trilha" aria-hidden="true" style="left: 20px; top: 43px; width: 0px; height: 2px;"></span></ol>
+    <div class="cta-zap rv in">
+      <p>Pronto pra começar? Me chama agora e recebe prazo e valor na hora.</p>
+      <a href="https://wa.me/5581979043528?text=Oi!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20criativos%20pra%20campanha." data-cta="" class="btn btn-dark cta-zap-btn" target="_blank" rel="noopener">Começar agora no WhatsApp <span class="seta">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head centro rv in">
+      <h2 class="sec-title">Perguntas <span class="rabisco">frequentes<svg class="rab" viewBox="0 0 200 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 12 C 40 4, 80 4, 118 9 S 178 15, 197 6"></path></svg></span>.</h2>
+      <p class="sec-sub">As dúvidas que mais aparecem antes de fechar.</p>
+    </div>
+    <div class="faq-list" id="lista-faq">
+  <div class="faq rv in">
+    <button class="faq-q">Quanto custa?<span class="pl">+</span></button>
+    <div class="faq-a"><p>Hard Copy, IA, Viral e Hard Motion saem em pacote: 3 vídeos por R$255, 5 por R$380 ou 10 por R$750. Impact é R$150, UGC R$250 e Motion Design R$400 por vídeo. Cada vídeo é feito sob medida, de acordo com a necessidade do seu negócio: roteiro, estilo e acabamento pensados pra sua oferta e pro seu público. O preço que está na tela é o preço final.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Dá pra comprar um vídeo só?<span class="pl">+</span></button>
+    <div class="faq-a"><p>Hard Copy, IA, Viral e Hard Motion começam no Pacote 3. Com um criativo só você não descobre o que funciona; com três você testa ângulos diferentes e vê qual vende. Impact, UGC e Motion Design podem ser contratados por vídeo.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Quanto tempo demora?<span class="pl">+</span></button>
+    <div class="faq-a"><p>Hard Copy, IA, Viral e Hard Motion ficam prontos em até 48 horas depois do briefing fechado. O UGC leva de 3 a 4 dias, porque tem uma pessoa real gravando. O Motion Design leva de 5 a 7 dias, porque a animação é feita do zero.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Como eu começo?<span class="pl">+</span></button>
+    <div class="faq-a"><p>Chama no WhatsApp. Eu abro um grupo com você, alinho o briefing e a produção começa. Sem reunião obrigatória.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Posso pedir alterações?<span class="pl">+</span></button>
+    <div class="faq-a"><p>Pode. O Pacote 3 vem com 1 rodada de ajuste, o Pacote 5 com 2 e o Pacote 10 com 3. Não é ilimitado, mas é organizado para chegar onde você quer.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Como funciona a entrega?<span class="pl">+</span></button>
+    <div class="faq-a"><p>O vídeo final chega no grupo do WhatsApp, pronto para subir na campanha, no formato certo para anunciar.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Os arquivos são meus?<span class="pl">+</span></button>
+    <div class="faq-a"><p>São. O criativo entregue é seu, liberado para rodar nas suas campanhas pelo tempo que você quiser.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Como funciona o pagamento?<span class="pl">+</span></button>
+    <div class="faq-a"><p>Valor integral, por link de pagamento que eu mando no WhatsApp. A produção começa assim que o pagamento confirma.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Qual pacote eu escolho de primeira?<span class="pl">+</span></button>
+    <div class="faq-a"><p>O Pacote 3 é pra começar e descobrir qual ângulo vende. O Pacote 5 é o mais pedido, o tanto que dá pra testar de verdade.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Vocês atendem qualquer nicho?<span class="pl">+</span></button>
+    <div class="faq-a"><p>Sim. Já são mais de 1.200 clientes e 3.000 criativos produzidos, de infoproduto a serviço local.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Vocês fazem vídeos com IA?<span class="pl">+</span></button>
+    <div class="faq-a"><p>Fazemos: é o estilo IA, em que a cena inteira nasce por inteligência artificial, lugar, objeto, pessoa. Sempre com roteiro e direção humana por trás.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">Vocês trabalham com modelos reais?<span class="pl">+</span></button>
+    <div class="faq-a"><p>Sim. É o UGC: uma pessoa real grava segurando e usando o seu produto, como indicação de amigo. R$250 por vídeo.</p></div>
+  </div>
+  <div class="faq rv in">
+    <button class="faq-q">E se eu precisar de uma peça mais trabalhada?<span class="pl">+</span></button>
+    <div class="faq-a"><p>Aí é o Motion Design: animação feita do zero, com acabamento de estúdio, pra lançamento, apresentação de produto ou campanha que precisa se destacar no feed. R$400 por vídeo, de 5 a 7 dias.</p></div>
+  </div></div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="cta-brilho"></div>
+  <div class="wrap">
+    <div class="sec-head centro rv in">
+      <h2 class="sec-title">Vamos <span class="rabisco">falar<svg class="rab" viewBox="0 0 200 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 12 C 40 4, 80 4, 118 9 S 178 15, 197 6"></path></svg></span>?</h2>
+      <p class="sec-sub">Você já viu as peças e os valores. Chama agora — a resposta costuma ser rápida.</p>
+    </div>
+    <div class="ct-cards">
+      <article class="ct-card ct-zap rv in">
+        <span class="ct-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.02ZM12.04 20.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 8.23 8.25c0 4.54-3.7 8.23-8.24 8.23Z"></path></svg></span>
+        <h3>WhatsApp</h3>
+        <p>O atalho mais rápido. Me conta o que precisa e eu devolvo prazo e valor na hora.</p>
+        <a href="https://wa.me/5581979043528?text=Oi!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20criativos%20pra%20campanha." data-cta="" class="btn btn-dark so-com-cta" target="_blank" rel="noopener"><span data-cta-txt="">Chamar agora</span></a>
+      </article>
+      <article class="ct-card rv d1 in">
+        <span class="ct-ico ct-ico-insta"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.8" fill="none" stroke="#fff" stroke-width="2"></rect><circle cx="12" cy="12" r="4.4" fill="none" stroke="#fff" stroke-width="2"></circle><circle cx="17.4" cy="6.6" r="1.3" fill="#fff"></circle></svg></span>
+        <h3>Redes e contato</h3>
+        <p>Acompanha as peças no meu Instagram, ou me manda um e-mail.</p>
+        <div class="ct-pills">
+          <a href="https://instagram.com/kauan.cac" data-insta="" target="_blank" rel="noopener">@kauan.cac</a>
+          <a href="mailto:contatokauancarlos@gmail.com" data-email="">E-mail</a>
+          <a href="#projetos">Ver criativos</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/5581979043528?text=Oi!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20criativos%20pra%20campanha." data-cta="" class="zap-flut" aria-label="Falar no WhatsApp" title="Falar no WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.89-7.02zm-7.01 15.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 0 1 12.79-10.2 8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.22 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"></path></svg></a>
+<footer class="kz-foot">
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <p class="kz-foot-marca" translate="no" aria-label="Kauan">KAUAN</p>
+        <p class="f-note">Criativos de performance feitos por mim, do roteiro à entrega. Você pede, eu produzo, sua campanha sobe.</p>
+      </div>
+      <div class="f-links">
+        <div class="f-col">
+          <b>Navegar</b>
+          <a href="#inicio">Início</a>
+          <a href="#projetos">Estilos</a>
+          <a href="#pacotes">Pacotes</a>
+        </div>
+        <div class="f-col">
+          <b>Suporte</b>
+          <a href="#processo">Como funciona</a>
+          <a href="#faq">Perguntas frequentes</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div class="f-col" data-col-contato="">
+          <b>Social</b>
+          <a href="https://instagram.com/kauan.cac" data-insta="" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://wa.me/5581979043528?text=Oi!%20Vi%20o%20site%20e%20quero%20saber%20mais%20sobre%20os%20criativos%20pra%20campanha." data-cta="" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:contatokauancarlos@gmail.com" data-email="">E-mail</a>
+        </div>
+      </div>
+    </div>
+    <p class="kz-foot-giant" translate="no" aria-hidden="true">KAUAN</p>
+    <div class="f-bottom">
+      <span>© <span id="ano">2026</span> Kauan. Todos os direitos reservados.</span>
+      <span>Criativos que convertem.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="palco" id="palco" aria-hidden="true">
+  <div class="palco-caixa">
+    <div class="palco-tela">
+      <button class="palco-voltar" id="palco-fechar" type="button" aria-label="Voltar">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg>
+      </button>
+      <video id="palco-video" playsinline="" loop="" controlslist="nodownload noremoteplayback" disablepictureinpicture="" disableremoteplayback="" oncontextmenu="return false"></video>
+      <span class="palco-carregando" aria-hidden="true"></span>
+    </div>
+    <div class="palco-acoes" id="palco-legenda">
+      <a href="#" id="palco-quero" class="palco-quero" target="_blank" rel="noopener">Quero nesse estilo!</a>
+      <button type="button" id="palco-outros" class="palco-outros">Ver outros</button>
+    </div>
+  </div>
+</div><div class="fb-luz" id="fb-luz" hidden="">
+  <div class="fb-luz-fundo" data-fechar-fb=""></div>
+  <button class="fb-x" data-fechar-fb="" aria-label="Fechar">✕</button>
+  <button class="fb-nav fb-ant" id="fb-ant" aria-label="Anterior">‹</button>
+  <img id="fb-img" alt="Feedback de cliente">
+  <button class="fb-nav fb-prox" id="fb-prox" aria-label="Próximo">›</button>
+  <span class="fb-conta" id="fb-conta"></span>
+</div>
+<span id="PING_CONTENT_PUSH_NOTIFICATION" style="display: none;"></span><script src="js/asset-map.js"></script>
+<script src="js/app.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/faixa.js"></script>
+<script src="js/smooth-projetos.js"></script>
+</body></html>

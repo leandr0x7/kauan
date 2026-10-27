@@ -1,0 +1,33 @@
+{
+  "url": "https://rizefirst.com.br/#projetos",
+  "title": "Rize First | Onde criativos convertem",
+  "capturedAt": "2026-10-25T00:09:24.321Z",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "charset": "UTF-8",
+  "captureMode": "page",
+  "scriptCount": 0,
+  "inlineScriptCount": 6,
+  "assetCount": 64,
+  "assetFailedCount": 8,
+  "tip": "Para sites WebGL/3D, role a página e espere as animações carregarem antes de capturar.",
+  "options": {
+    "html": true,
+    "css": true,
+    "inline": true,
+    "scripts": true,
+    "assets": true,
+    "tailwind": true,
+    "meta": true,
+    "crawl": false,
+    "maxPages": 40
+  },
+  "styleTagCount": 3,
+  "linkedStylesheetCount": 4,
+  "inlineStyleCount": 20,
+  "tailwindClassCount": 0,
+  "scriptSavedCount": 0,
+  "assetSavedCount": 64,
+  "rewrittenUrls": 64,
+  "pageCount": 1,
+  "pages": []
+}
