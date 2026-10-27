@@ -43,12 +43,29 @@
 .tf-selo{ background:var(--kp) !important; color:#fff !important; }
 
 /* botões */
-.btn-zap,.tb-btn.tb-zap,.btn-zap-dep{
+.btn-zap,.tb-btn.tb-zap{
   background:linear-gradient(180deg,#8B5CF6,#6D28D9) !important;
   box-shadow:0 1px 0 rgba(255,255,255,.18) inset, 0 14px 30px -10px rgba(109,40,217,.65) !important;
 }
 .btn-zap:hover,.tb-btn.tb-zap:hover{ background:linear-gradient(180deg,#9D6CFA,#7C3AED) !important; }
 .tb-ctas .tb-btn:not(.tb-zap){ background:#fff !important; color:var(--kk) !important; }
+
+/* Quero resultados — verde WhatsApp o tempo todo */
+.btn-zap-dep,
+#cases.tema-escuro .btn-zap-dep,
+#cases .btn-insta.btn-zap-dep{
+  background:#25D366 !important;
+  border-color:#25D366 !important;
+  color:#0C0B10 !important;
+  box-shadow:0 10px 24px -10px rgba(37,211,102,.65) !important;
+}
+.btn-zap-dep:hover,
+#cases.tema-escuro .btn-zap-dep:hover,
+#cases .btn-insta.btn-zap-dep:hover{
+  background:#1EBE57 !important;
+  border-color:#1EBE57 !important;
+  color:#0C0B10 !important;
+}
 
 /* marca no nav */
 .nav-nome i{ background:var(--kp) !important; box-shadow:0 0 0 3px rgba(244,63,122,.18); }
@@ -106,12 +123,11 @@ h1,h2,h3,.sec-title,.cases-titulo,.dp-titulo,.tb h1,#inicio.tb h1,.pk h3,.format
 .rabisco .rab{ display:none !important; }
 .rabisco{ background:linear-gradient(transparent 60%, rgba(244,63,122,.38) 60%, rgba(244,63,122,.38) 92%, transparent 92%); padding:0 .06em; }
 
-/* KAUAN gigante em contorno — mesmo traço do footer */
-#inicio.tb-escuro::before{ content:none !important; display:none !important; }
+/* KAUAN: desktop atrás do título (mais acima); mobile = contorno antigo no fundo */
 #inicio .kz-hero-marca{ display:none !important; }
+#inicio .tb-txt{ position:relative; }
+#inicio .tb-txt > *:not(.kz-hero-giant){ position:relative; z-index:1; }
 .kz-hero-giant{
-  position:absolute !important;
-  z-index:0 !important;
   margin:0;
   pointer-events:none;
   user-select:none;
@@ -122,24 +138,82 @@ h1,h2,h3,.sec-title,.cases-titulo,.dp-titulo,.tb h1,#inicio.tb h1,.pk h3,.format
   text-transform:uppercase;
   color:transparent !important;
   -webkit-text-fill-color:transparent !important;
-  -webkit-text-stroke:1.5px rgba(255,255,255,.14);
 }
 @media (min-width:901px){
+  #inicio.tb-escuro::before{ content:none !important; display:none !important; }
   .kz-hero-giant{
-    left:clamp(16px,4vw,48px);
-    top:56px;
-    font-size:clamp(96px,16vw,240px);
+    display:block !important;
+    position:absolute !important;
+    z-index:0 !important;
+    left:-.02em;
+    top:-.28em;
+    transform:none;
+    font-size:clamp(100px,13vw,180px);
+    white-space:nowrap;
+    max-width:none;
+    -webkit-text-stroke:1.5px rgba(255,255,255,.14);
   }
 }
 @media (max-width:900px){
-  .kz-hero-giant{
-    right:-4vw;
-    left:auto;
-    top:auto;
-    bottom:8px;
-    font-size:32vw;
-    -webkit-text-stroke:1px rgba(255,255,255,.12);
+  /* some o do título; volta o contorno grande no canto do hero */
+  .kz-hero-giant{ display:none !important; }
+  #inicio.tb-escuro::before{
+    content:"KAUAN" !important;
+    display:block !important;
+    position:absolute !important;
+    right:-3vw; left:auto; top:auto; bottom:12px; z-index:0;
+    pointer-events:none;
+    font-family:var(--font-d,"Space Grotesk",sans-serif);
+    font-weight:700; font-size:34vw; line-height:.85; letter-spacing:-.06em;
+    color:transparent; -webkit-text-fill-color:transparent;
+    -webkit-text-stroke:1px rgba(255,255,255,.10);
   }
+}
+
+/* oferta flutuante (direita) */
+.kz-offer{
+  position:fixed; z-index:420; right:20px; bottom:20px;
+  width:min(300px, calc(100vw - 28px));
+  padding:18px 18px 16px; border-radius:18px;
+  background:rgba(12,11,16,.92); color:#fff;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 24px 60px -20px rgba(109,40,217,.55), 0 0 0 1px rgba(244,63,122,.12);
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  overflow:hidden; animation:kz-in .55s var(--ease,cubic-bezier(.22,.68,.14,1)) both;
+}
+.kz-offer.off{ opacity:0; pointer-events:none; transform:translateY(16px) scale(.96); transition:.35s; }
+.kz-offer-glow{
+  position:absolute; inset:-40% -20% auto auto; width:180px; height:180px;
+  background:radial-gradient(circle, rgba(124,58,237,.55), transparent 70%);
+  animation:kz-glow 4s ease-in-out infinite alternate; pointer-events:none;
+}
+.kz-offer-x{
+  position:absolute; top:8px; right:10px; width:28px; height:28px;
+  border:0; background:transparent; color:rgba(255,255,255,.55); font-size:20px; cursor:pointer;
+}
+.kz-offer-kicker{
+  display:flex; align-items:center; gap:8px; margin:0 0 8px;
+  font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.6);
+}
+.kz-offer-title{ margin:0 0 6px; font-family:var(--font-d,"Space Grotesk",sans-serif); font-size:20px; font-weight:700; letter-spacing:-.03em; }
+.kz-offer-price{ margin:0 0 4px; font-size:15px; }
+.kz-offer-price b{ font-size:28px; font-weight:800; letter-spacing:-.04em;
+  background:linear-gradient(108deg,#A78BFA,#F43F7A); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.kz-offer-price s{ opacity:.45; margin-left:6px; font-size:14px; }
+.kz-offer-timer{ margin:0 0 14px; font-size:13px; color:rgba(255,255,255,.55); }
+.kz-offer-timer i{ font-style:normal; color:#fff; font-variant-numeric:tabular-nums; font-weight:700; }
+.kz-offer-cta{
+  display:flex; align-items:center; justify-content:center; height:42px;
+  border-radius:10px; text-decoration:none; font-weight:700; font-size:14px; color:#fff;
+  background:linear-gradient(180deg,#8B5CF6,#6D28D9);
+  box-shadow:0 10px 24px -10px rgba(109,40,217,.8);
+  transition:transform .25s;
+}
+.kz-offer-cta:hover{ transform:translateY(-2px); }
+@keyframes kz-in{ from{ opacity:0; transform:translateY(24px) scale(.94) } }
+@keyframes kz-glow{ to{ transform:translate(-12px,10px) scale(1.15) } }
+@media (max-width:900px){
+  .kz-offer{ right:12px; bottom:12px; padding:16px 14px 14px; }
 }
 
 /* faísca sobre o i */
@@ -293,10 +367,10 @@ h1,h2,h3,.sec-title,.cases-titulo,.dp-titulo,.tb h1,#inicio.tb h1,.pk h3,.format
   padding:22px 0 26px !important;
 }
 #marcas.kz-oferta-sec .marcas-titulo{
-  display:flex !important; align-items:center; justify-content:flex-start !important; gap:10px;
+  display:flex !important; align-items:center; justify-content:center !important; gap:10px;
   color:#fff !important; font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
-  text-align:left !important; width:auto !important; max-width:none !important;
-  margin:0 0 14px clamp(16px,4vw,48px) !important; padding:0 !important;
+  text-align:center !important; width:100% !important; max-width:none !important;
+  margin:0 auto 14px !important; padding:0 16px !important;
 }
 #marcas .kz-oferta-trilho{
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent) !important;
@@ -337,7 +411,7 @@ h1,h2,h3,.sec-title,.cases-titulo,.dp-titulo,.tb h1,#inicio.tb h1,.pk h3,.format
 }
 @media (max-width:700px){
   #marcas.kz-oferta-sec{ padding:18px 0 20px !important; }
-  #marcas.kz-oferta-sec .marcas-titulo{ margin-left:16px !important; font-size:11px; }
+  #marcas.kz-oferta-sec .marcas-titulo{ margin:0 auto 12px !important; font-size:11px; justify-content:center !important; }
   .kz-oferta-chip{ gap:10px; margin:0 16px; padding:9px 14px; font-size:13px; }
 }
 
@@ -575,3 +649,20 @@ footer.kz-foot .f-bottom{
   .kz-foot-giant{ font-size:28vw; margin-top:28px; }
   footer.kz-foot .f-bottom{ flex-direction:column; align-items:flex-start; gap:6px; }
 }
+
+/* FAQ um pouco mais compacto */
+#faq .faq-q{
+  padding:14px 18px !important;
+  font-size:14px !important;
+  gap:12px !important;
+}
+#faq .faq-q .pl{
+  width:26px !important; height:26px !important;
+  font-size:16px !important;
+}
+#faq .faq-a p{
+  padding:0 18px 16px !important;
+  font-size:13.5px !important;
+  line-height:1.5 !important;
+}
+#faq .faq{ margin-bottom:8px !important; }
